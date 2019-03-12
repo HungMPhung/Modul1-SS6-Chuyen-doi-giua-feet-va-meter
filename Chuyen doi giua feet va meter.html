@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+Amount <input type="text" id="inputValue"/>
+From
+<select id="option1">
+    <option value="feet">Feet</option>
+    <option value="meter">Meter</option>
+</select>
+To
+<select id="option2">
+    <option value="meter">Meter</option>
+    <option value="feet">Feet</option>
+</select>
+<input type="button" value="Convert" onclick="convert()">
+<span id="result"></span>
+<body>
+<script>
+
+    function convert() {
+        let amount = parseFloat(document.getElementById('inputValue').value);
+        let inputOption1 = document.getElementById("option1").value;
+        let inputOption2 = document.getElementById("option2").value;
+        let result = 0;
+        alert(amount);
+        if (inputOption1 === "feet" && inputOption2 === "meter") {
+            result = amount * 0.305;
+        }
+        else if (inputOption1 === "meter" && inputOption2 === "feet") {
+            result = amount * 3.279;
+        }
+        else {
+            result = "Kiem tra lai dieu kien";
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>
+
+</body>
+</html>
